@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dompet Cemerlang</title>
+ 
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+  <h1>  💰  Dompet Siswa Cemerlang</h1>
+  
+  <! -- Kartu informasi saldo-->
+  <div class="kartu-saldo">   
+  <span class="label-saldo">Saldo saya:</span>
+  <h2 id="saldo-display" class="val-saldo">Loading...</h2>
+  <small class="user-id">User ID : <strong id="user-id-display">SISWA-01</strong></small>
+  </div>
+  
+<! -- pembaca QR -->
+<div id="scanner-section" class="scanner-section">
+  <h3 class="text-center">Arahkan ke QR Kasir</h3>
+  <div id="reader" class="camera box"></div>
+</div>
+
+<! --kotak informasi bayaran -->
+<div id="konfirmasi-section" class="hidden konfirmasi-section">
+  <h3>Detail Transaksi</h3>
+  <p class="text-id">ID: <strong id="tx-id-found" class="tx-id-text"></strong></p>
+  <div id="tx-total-found" class="tx-total-text">Rp. 0</div>
+  
+  <div class="actions-btn">
+    <button id="btn-konfirmasi" class="btn-main">Bayar  Sekarang</button>
+    <button class="btn-reset">Batal</button>
+  </div>
+  </div>
+  
+  <div id="pesan-box" class="pesan-box"></div>
+</div>
+
+  <script  type="module"  src="main.js"></script>
+</body>
+</html>
