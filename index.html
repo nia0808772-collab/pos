@@ -1,43 +1,46 @@
- <!doctype html>
+ <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dompet Cemerlang</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>💰 Dompet Siswa Cemerlang</h1>
 
-      <!-- Kartu Informasi Saldo -->
-      <div class="kartu-saldo">
-        <span class="label-saldo">Saldo Saya:</span>
-        <h2 id="saldo-display" class="val-saldo">Loading..</h2>
-        <small class="user-id">User ID: <strong id="user-id-display">3100108117</strong></small>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dompet Cemerlang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1> 💰Dompet Siswa Cemerlang</h1>
+    
+    <!-- Kartu Informasi Saldo -->
+    <div class="kartu-saldo">
+      <span class="label-saldo">Saldo Saya:</span>
+      <h2 id="saldo-display" class="val-saldo">Loading</h2>
+      <small class="user-id">User ID: <strong id="user-id-display">3100108117</small></strong>
+    </div>
+    
+    <!-- Pembaca QR Code -->
+    <div id="scanner-section" class="scanner-section">
+      <h3 class="text-center">Arahkan ke QR kasir</h3>
+      <div id="reader" class="camera-box"></div>
+    </div>
+    
+    <!-- Kotak konfirmasi pembayaran -->
+    <div id="konfirmasi-section" class=" hidden konfirmasi-section">
+      <p class="text-id">ID: <strong id="tx-id-found" class="tx-id-text">-</p>
+      <div id="tx-total-found" class="tx-total-text">Rp. 0
       </div>
-
-      <!-- Pembaca QR Code -->
-      <div id="scanner-section" class="scanner-section">
-        <h3 class="text-center">Arahkan ke QR kasir</h3>
-        <div id="reader" class="camera-box"></div>
+      
+      <div class="action-btns">
+        <button id="btn-konfirmasi" class="btn-main" onclick="prosesBayar()">Bayar Sekarang</button>
+        <button class="btn-reset" onclick="batalScan()">Batal</button>
       </div>
-
-      <!-- Kotak konfirmasi pembayaran -->
-      <div id="konfirmasi-section" class="hidden konfirmasi-section">
-        <h3>Detail Transaksi</h3>
-        <p class="text-id">ID: <strong id="tx-id-found" class="tx-id-text">-</strong></p>
-        <div id="tx-total-found" class="tx-total-text">Rp. 0</div>
-
-        <div class="action-btns">
-          <button id="btn-konfirmasi" class="btn-main">Bayar Sekarang</button>
-          <button class="btn-reset">Batal</button>
-        </div>
-      </div>
-
+      
       <div id="pesan-box" class="pesan-box"></div>
     </div>
-
+    
     <script type="module" src="main.js"></script>
-  </body>
+</body>
+
 </html>
